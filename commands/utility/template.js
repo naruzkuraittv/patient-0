@@ -1,3 +1,4 @@
+//skip loading
 // this file is named template.js and it is located in path: */bot/commands/ at */bot/commands/template.js
 const { SlashCommandBuilder } = require('discord.js');
 

@@ -12,4 +12,10 @@ Asigns a @Streaming With Kit whenever user joins #streaming vc. and takes it awa
 only users with @moderator or higher can use /commands from this bot.
 ##### will be updated whenever people ask for more functionality.
 
+## to do
+
+
+##### secrets.json has been reset its just a template.
+
+
 
