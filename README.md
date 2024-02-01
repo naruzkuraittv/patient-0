@@ -13,9 +13,13 @@ only users with @moderator or higher can use /commands from this bot.
 ##### will be updated whenever people ask for more functionality.
 
 ## to do
+post to chanel x if streamer y is live
 
-
-##### secrets.json has been reset its just a template.
+##### secrets.json is ignored, heres a template if i ever move servers or give code away to someone else
+{
+    "token": "000000000000000.0000000000000000000000000",
+    "clientId": "0000000000000000000"
+}
 
 
 
