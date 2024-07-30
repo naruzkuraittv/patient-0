@@ -10,7 +10,7 @@ try {
     process.exit(1);
 }
 
-const clientId = config.twclientId;
+const twclientId = config.twclientId;
 const clientSecret = config.twclientSecret;
 const twitchUsername = config.twitchUsername;
 
@@ -18,7 +18,7 @@ async function getAccessToken() {
     try {
         const response = await axios.post('https://id.twitch.tv/oauth2/token', null, {
             params: {
-                client_id: clientId,
+                client_id: twclientId,
                 client_secret: clientSecret,
                 grant_type: 'client_credentials'
             },
@@ -37,7 +37,7 @@ async function isTwitchChannelLive(username, accessToken) {
     try {
         const response = await axios.get(`https://api.twitch.tv/helix/streams?user_login=${username}`, {
             headers: {
-                'Client-ID': clientId,
+                'Client-ID': twclientId,
                 'Authorization': `Bearer ${accessToken}`
             }
         });
