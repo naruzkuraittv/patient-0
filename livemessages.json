@@ -1,0 +1,6 @@
+{ "username": "message here",
+  "username2":"${twitchUsername} is now live on Twitch! https://twitch.tv/${twitchUsername}",
+  "username3": "your local __***${twitchUsername}***__ is now live on Twitch! \nhttps://twitch.tv/${twitchUsername}",
+  "PsychoticKitten": "your local ***${twitchUsername}*** is now live on Twitch! \nhttps://twitch.tv/${twitchUsername}"
+
+}

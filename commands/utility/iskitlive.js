@@ -4,13 +4,13 @@ const fs = require('fs');
 
 let config;
 try {
-    config = JSON.parse(fs.readFileSync('secrets.json', 'utf-8'));
+    config = JSON.parse(fs.readFileSync('config.json', 'utf-8'));
 } catch (error) {
     console.error('Error reading config.json:', error);
     process.exit(1);
 }
 
-const twclientId = config.twclientId;
+const clientId = config.twclientId;
 const clientSecret = config.twclientSecret;
 const twitchUsername = config.twitchUsername;
 
@@ -18,7 +18,7 @@ async function getAccessToken() {
     try {
         const response = await axios.post('https://id.twitch.tv/oauth2/token', null, {
             params: {
-                client_id: twclientId,
+                client_id: clientId,
                 client_secret: clientSecret,
                 grant_type: 'client_credentials'
             },
@@ -37,7 +37,7 @@ async function isTwitchChannelLive(username, accessToken) {
     try {
         const response = await axios.get(`https://api.twitch.tv/helix/streams?user_login=${username}`, {
             headers: {
-                'Client-ID': twclientId,
+                'Client-ID': clientId,
                 'Authorization': `Bearer ${accessToken}`
             }
         });
