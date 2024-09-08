@@ -4,9 +4,9 @@ const fs = require('fs');
 
 let config;
 try {
-    config = JSON.parse(fs.readFileSync('config.json', 'utf-8'));
+    config = JSON.parse(fs.readFileSync('secrets.json', 'utf-8'));
 } catch (error) {
-    console.error('Error reading config.json:', error);
+    console.error('Error reading secrets.json:', error);
     process.exit(1);
 }
 

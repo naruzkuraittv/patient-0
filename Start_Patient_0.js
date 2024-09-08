@@ -10,7 +10,7 @@ let config;
 try {
     config = JSON.parse(fs.readFileSync('secrets.json', 'utf-8'));
 } catch (error) {
-    console.error('Error reading config.json:', error);
+    console.error('Error reading secrets.json:', error);
 }
 
 
