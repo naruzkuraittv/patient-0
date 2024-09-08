@@ -78,7 +78,7 @@ async function checkTwitchLiveStatus() {
     }
 
     const isLive = await isTwitchChannelLive(twitchUsername, twitchAccessToken);
-    const channel = await client.channels.fetch(announcements_channel);
+    let channel = await client.channels.fetch(announcements_channel);
 
     if (isLive && lastKnownStatus === 'offline') {
         const liveMessage = getLiveMessage(twitchUsername);
@@ -96,9 +96,30 @@ async function checkTwitchLiveStatus() {
     }
 }
 
+async function sendMessageInChannel(channelId, sendMessage) {
+    console.log(`Sending message to channel: ${channelId}`);
+    try {config = JSON.parse(fs.readFileSync('secrets.json', 'utf-8'));
+    twclientId = config.twclientId;
+    clientSecret = config.twclientSecret;
+    twitchUsername = config.twitchUsername;
+    } catch (error) {
+        console.error('Error reading secrets.json:', error);
+        return;
+    }
+    
+    sendMessage = sendMessage.replace(/\$\{twitchUsername\}/g, twitchUsername);
 
+    if (config.devMode === "false") {
+        let channel = await client.channels.fetch(config.announcements_channel);
+        channel.send(message);
 
-// Helper function to check if the channel is live
+    }
+    else{
+        let channel = await client.channels.fetch(config.dev_channel);
+        channel.send(message);
+    }
+} 
+
 async function isTwitchChannelLive(username, accessToken) {
     try {
         const response = await axios.get(`https://api.twitch.tv/helix/streams?user_login=${username}`, {
