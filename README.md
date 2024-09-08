@@ -21,9 +21,16 @@ post to chanel x if streamer y is live
     "clientId": "000000000000000000000000000000000000000000000000000000000",
     "twclientId": "000000000000000000000000000000000000000000000000000000000",
     "twclientSecret": "000000000000000000000000000000000000000000000000000000000",
-    "twitchUsername": "psychoticKitten" 
+    "twitchUsername": "OnStartTwitchUsername",
+    "announcements_channel": "0000000000000000000"
 }
 
+#### livemessage.json is ignored, heres a template if i ever move servers or give code away to someone else whenever multi user is supported
+{ "username": "message here",
+  "username2":"${twitchUsername} is now live on Twitch! https://twitch.tv/${twitchUsername}",
+  "username3": "your local __***${twitchUsername}***__ is now live on Twitch! \nhttps://twitch.tv/${twitchUsername}",
+  "continueousCheckUsername": "your local ***${twitchUsername}*** is now live on Twitch! \nhttps://twitch.tv/${twitchUsername}"
+}
 
 
 
