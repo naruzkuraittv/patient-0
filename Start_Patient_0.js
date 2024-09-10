@@ -93,6 +93,7 @@ async function checkTwitchLiveStatus() {
         console.log(`${twitchUsername} is still live.`);
     } else {
         console.log(`${twitchUsername} is still offline.`);
+        console.log(`would've sent message to channel ${channel}, that channels name is ${channel.name}`);
 
     }
 }
