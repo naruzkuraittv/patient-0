@@ -16,6 +16,7 @@ only users with @moderator or higher can use /commands from this bot.
 post to chanel x if streamer y is live
 
 ##### secrets.json is ignored, heres a template if i ever move servers or give code away to someone else
+```json
 {
     "token": "000000000000000000000000000000000000000000000000000000000",
     "clientId": "000000000000000000000000000000000000000000000000000000000",
@@ -24,15 +25,16 @@ post to chanel x if streamer y is live
     "twitchUsername": "OnStartTwitchUsername",
     "announcements_channel": "0000000000000000000"
 }
+```
 
 #### livemessage.json is ignored, heres a template if i ever move servers or give code away to someone else whenever multi user is supported
+```json
 { "username": "message here",
   "username2":"${twitchUsername} is now live on Twitch! https://twitch.tv/${twitchUsername}",
   "username3": "your local __***${twitchUsername}***__ is now live on Twitch! \nhttps://twitch.tv/${twitchUsername}",
   "continueousCheckUsername": "your local ***${twitchUsername}*** is now live on Twitch! \nhttps://twitch.tv/${twitchUsername}"
 }
-
-
+```
 
 
 
